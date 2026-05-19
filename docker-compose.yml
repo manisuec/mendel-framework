@@ -1,0 +1,60 @@
+# Full local stack: MongoDB + Mendel Framework backend + admin UI.
+#
+# Usage:
+#   docker compose up --build      # build images and start
+#   docker compose up -d           # detached
+#   docker compose down            # stop containers (preserve data)
+#   docker compose down -v         # stop + drop the mongo volume
+#
+# Once running:
+#   UI       → http://localhost:3100/
+#   Backend  → http://localhost:3000/   (proxied through the UI under /api/)
+#   MongoDB  → mongodb://localhost:27017/mendel-framework
+
+services:
+
+  mongo:
+    image: mongo:7
+    container_name: mendel-framework-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mendel-framework-backend
+    restart: unless-stopped
+    environment:
+      MONGO_URI: mongodb://mongo:27017/mendel-framework
+      PORT: "3000"
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: mendel-framework-ui
+    restart: unless-stopped
+    ports:
+      - "3100:80"
+    depends_on:
+      backend:
+        condition: service_started
+
+volumes:
+  mongo_data:

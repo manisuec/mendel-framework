@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+ui/node_modules/
+
+# Build output
+ui/dist/
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# Coverage / test artifacts
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temp
+/tmp
+tmp/
+*.tmp
+
+# Claude local settings (keep shared settings.json if any)
+.claude/settings.local.json

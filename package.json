@@ -1,0 +1,35 @@
+{
+  "name": "mendel-framework",
+  "version": "1.0.0",
+  "description": "A/B testing and feature flag framework for Node.js with MongoDB/Mongoose, layer-based mutual exclusion, and Express integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node examples/server.js"
+  },
+  "keywords": [
+    "experiment",
+    "feature-flag",
+    "ab-testing",
+    "feature-toggle",
+    "mongoose",
+    "express"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "peerDependencies": {
+    "mongoose": "^9.6.2"
+  },
+  "optionalDependencies": {
+    "celebrate": "^15.0.3"
+  },
+  "dependencies": {
+    "express": "^4.22.2",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "celebrate": "^15.0.3",
+    "mongoose": "^9.6.2"
+  }
+}
