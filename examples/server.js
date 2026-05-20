@@ -16,7 +16,7 @@ const {
 } = require('../index');
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/mendel-framework';
-const PORT      = Number(process.env.PORT || 3000);
+const PORT      = Number(process.env.PORT || 3001);
 
 async function main() {
   await mongoose.connect(MONGO_URI);

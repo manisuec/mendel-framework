@@ -3,8 +3,7 @@
 /**
  * Example: integrating Mendel Framework into an Express + Mongoose app.
  *
- * Mendel Framework is fully generic — no business concepts (paid plans, orgs,
- * users) are baked in. Audience selection is expressed as **targeting rules**
+ * Mendel Framework is fully generic — no business concepts are baked in. Audience selection is expressed as **targeting rules**
  * over an attribute bag the caller supplies at evaluation time. Variants and
  * bucketing are deterministic so the same item always lands in the same arm.
  */
@@ -94,8 +93,7 @@ async function setupLayer() {
 // ─── 4. Evaluate flags / variants in application code ─────────────
 
 async function applicationCode() {
-  // The caller supplies attributes — the framework knows nothing about
-  // "paid users", "orgs", "regions"; it just runs the rules.
+  // The caller supplies attributes
   const attributes = {
     plan    : 'enterprise',
     country : 'US',
