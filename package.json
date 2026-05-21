@@ -4,7 +4,9 @@
   "description": "A/B testing and feature flag framework for Node.js with MongoDB/Mongoose, layer-based mutual exclusion, and Express integration",
   "main": "index.js",
   "scripts": {
-    "start": "node examples/server.js"
+    "start": "node examples/server.js",
+    "seed": "node examples/seed.js",
+    "test": "node --test 'test/**/*.test.js'"
   },
   "keywords": [
     "experiment",
