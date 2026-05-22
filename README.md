@@ -1,8 +1,8 @@
 <div align="center">
 
-# Mendel Framework
+# Mendel Framework: Production-grade, Self-hosted, A/B testing & Feature flag framework
 
-**A production-grade A/B testing & feature flag framework for Node.js**
+**A production-grade, self-hosted, A/B testing & feature flag framework for Node.js**
 
 Deterministic bucketing · Mongoose-backed storage · Layered mutual exclusion · Drop-in Express routes · React admin UI
 
