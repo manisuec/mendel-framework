@@ -37,7 +37,6 @@ The framework is **completely generic**. It carries no business concepts. Audien
 - **🔗 Prerequisites** — Gate one experiment on another experiment's variant assignment.
 - **🛡 Force-assign & QA overrides** — Pin specific items to specific variants for QA, demos, or customer escalations.
 - **📦 Variant payloads** — Ship arbitrary JSON payloads alongside each variant (copy, config, feature toggles).
-- **📊 Exposure & audit logging** — Stream every evaluation and mutation through configurable hooks; optionally persist them to MongoDB.
 - **⚡ Built-in TTL cache** — Hot-path `getConfigData` reads are cached in-process with automatic invalidation on writes.
 - **🌐 Express integration** — Drop-in client and admin route mounting with `celebrate` validation (optional dependency).
 - **🖥 React admin UI** — Manage experiments, layers, items, and overrides through a fully functional dashboard.
