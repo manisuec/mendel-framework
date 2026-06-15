@@ -26,6 +26,8 @@ Named after [Gregor Mendel](https://en.wikipedia.org/wiki/Gregor_Mendel); the fa
 
 The framework is **completely generic**. It carries no business concepts. Audience selection is expressed as **targeting rules** over an attribute bag the caller supplies at evaluation time. Bucketing is deterministic, so the same `(experiment, item)` pair always resolves to the same variant — across servers, across regions, across SDKs.
 
+***Read to know [How A Weekend Hack Became Our Feature Experimentation Backbone](https://medium.com/p/04b9eff63f49)***
+
 ---
 
 ## Features
