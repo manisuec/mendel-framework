@@ -20,27 +20,27 @@ Deterministic bucketing · Mongoose-backed storage · Layered mutual exclusion �
 
 ## 📖 About
 
-**Mendel Framework** is a batteries-included experimentation and feature-flagging platform you embed in your Node.js application. It is purpose-built for teams that want **GrowthBook / LaunchDarkly-style capabilities without the SaaS dependency or vendor lock-in** — everything runs on your own Mongo cluster, behind your own auth, in your own VPC.
+**Mendel Framework** is a batteries-included experimentation and feature-flagging platform you embed in your Node.js application. It is purpose-built for teams that want **GrowthBook / LaunchDarkly-style capabilities without the SaaS dependency or vendor lock-in**; everything runs on your own Mongo cluster, behind your own auth, in your own VPC.
 
-Named after [Gregor Mendel](https://en.wikipedia.org/wiki/Gregor_Mendel) — the father of modern genetics, who pioneered the concept of controlled experiments on inherited traits — the framework brings the same rigor to product experimentation: deterministic, reproducible, statistically sound.
+Named after [Gregor Mendel](https://en.wikipedia.org/wiki/Gregor_Mendel); the father of modern genetics, who pioneered the concept of controlled experiments on inherited traits; the framework brings the same rigor to product experimentation: deterministic, reproducible, statistically sound.
 
 The framework is **completely generic**. It carries no business concepts. Audience selection is expressed as **targeting rules** over an attribute bag the caller supplies at evaluation time. Bucketing is deterministic, so the same `(experiment, item)` pair always resolves to the same variant — across servers, across regions, across SDKs.
 
 ---
 
-## ✨ Features
+## Features
 
-- **🎯 Deterministic bucketing** — FNV-1a hashing keeps `(salt, item_id)` → variant assignments stable across servers and over time. No coordination required between the server and a client SDK.
-- **🚦 Two rollout modes** — `A_B_TESTING` for probabilistic bucketing into weighted variants, and `FEATURE_FLAG` for explicit per-item enrollment.
-- **🎚 Rich targeting rules** — `eq`, `in`, `gt(e)`, `lt(e)`, `contains`, `starts_with`, `ends_with`, `regex`, `exists` and more, combined with `all` / `any` semantics.
-- **🧬 Layers & holdouts** — Group experiments into a layer to enforce mutual exclusion, with optional global holdouts for measuring cumulative lift.
-- **🔗 Prerequisites** — Gate one experiment on another experiment's variant assignment.
-- **🛡 Force-assign & QA overrides** — Pin specific items to specific variants for QA, demos, or customer escalations.
-- **📦 Variant payloads** — Ship arbitrary JSON payloads alongside each variant (copy, config, feature toggles).
-- **⚡ Built-in TTL cache** — Hot-path `getConfigData` reads are cached in-process with automatic invalidation on writes.
-- **🌐 Express integration** — Drop-in client and admin route mounting with `celebrate` validation (optional dependency).
-- **🖥 React admin UI** — Manage experiments, layers, items, and overrides through a fully functional dashboard.
-- **🐳 Docker-ready** — `docker compose up` to bring up Mongo + backend + UI in seconds.
+- **🎯 Deterministic bucketing**: FNV-1a hashing keeps `(salt, item_id)` → variant assignments stable across servers and over time. No coordination required between the server and a client SDK.
+- **🚦 Two rollout modes**: `A_B_TESTING` for probabilistic bucketing into weighted variants, and `FEATURE_FLAG` for explicit per-item enrollment.
+- **🎚 Rich targeting rules**: `eq`, `in`, `gt(e)`, `lt(e)`, `contains`, `starts_with`, `ends_with`, `regex`, `exists` and more, combined with `all` / `any` semantics.
+- **🧬 Layers & holdouts**: Group experiments into a layer to enforce mutual exclusion, with optional global holdouts for measuring cumulative lift.
+- **🔗 Prerequisites**: Gate one experiment on another experiment's variant assignment.
+- **🛡 Force-assign & QA overrides**: Pin specific items to specific variants for QA, demos, or customer escalations.
+- **📦 Variant payloads**: Ship arbitrary JSON payloads alongside each variant (copy, config, feature toggles).
+- **⚡ Built-in TTL cache**: Hot-path `getConfigData` reads are cached in-process with automatic invalidation on writes.
+- **🌐 Express integration**: Drop-in client and admin route mounting with `celebrate` validation (optional dependency).
+- **🖥 React admin UI**: Manage experiments, layers, items, and overrides through a fully functional dashboard.
+- **🐳 Docker-ready**: `docker compose up` to bring up Mongo + backend + UI in seconds.
 
 ---
 
@@ -85,7 +85,7 @@ Group experiments into a layer to enforce mutual exclusion across audiences. Car
 
 ---
 
-## 🚀 Quickstart
+## Quickstart 🚀
 
 ### 1. Install
 
@@ -191,7 +191,7 @@ See [`examples/integration.js`](./examples/integration.js) for the full annotate
 
 ---
 
-## 🐳 Run the full stack locally
+## Run the full stack locally 🐳
 
 ```bash
 docker compose up --build
@@ -209,7 +209,7 @@ Tear down with `docker compose down` (preserves data) or `docker compose down -v
 
 ---
 
-## 🌱 Seed sample data
+## Seed sample data
 
 For local dev, a seed script ships with the framework that populates Mongo with a representative set of records so the admin UI and the client APIs have something to render right away.
 
@@ -240,7 +240,7 @@ See [`examples/seed.js`](./examples/seed.js) for the full payload — copy and t
 
 ---
 
-## 🧪 Tests
+## Tests
 
 Mendel Framework uses Node.js's built-in test runner (`node:test`), so the suite runs with zero extra dependencies and no test framework setup.
 
@@ -261,7 +261,7 @@ The service tests use thin in-memory model stubs so the suite runs in well under
 
 ---
 
-## 📚 API Reference
+## API Reference 📚 
 
 ### `createMendelFramework(mongoose, opts)`
 
@@ -340,7 +340,7 @@ This means a **client SDK** with the same hashing logic can evaluate flags ident
 
 ---
 
-## 🤝 Contributing
+## Contributing 🤝 
 
 We love contributions of all sizes — bug reports, feature ideas, docs improvements, and pull requests are all welcome.
 
@@ -348,7 +348,7 @@ Read [**CONTRIBUTING.md**](./CONTRIBUTING.md) for development setup, branching c
 
 ---
 
-## 📜 License
+## License 📜 
 
 Mendel Framework is released under the [MIT License](./LICENSE).
 
